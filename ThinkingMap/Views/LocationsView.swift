@@ -7,12 +7,23 @@
 
 import SwiftUI
 
+
+
 struct LocationsView: View {
+    
+    @EnvironmentObject var vm: LocationViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(vm.locations) {
+                Text($0.name)
+                //THis is the data
+            }
+        }
     }
 }
 
 #Preview {
     LocationsView()
+        .environmentObject(LocationViewModel())
 }

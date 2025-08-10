@@ -42,11 +42,20 @@ extension LocationsView {
                     .foregroundStyle(.primary)
                     .frame(height: 55)
                     .frame(maxWidth: .infinity)
+                    //.background(Color.red)
+                    .overlay(alignment: .leading) {
+                        Image(systemName: "arrow.down")
+                            .foregroundStyle(.primary)
+                            .padding()
+                        
+                    }
                 
                 
-            }.background(.thickMaterial)
-                .cornerRadius(10)
-                .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
+            }
+            .background(.thickMaterial)
+            .cornerRadius(10)
+            .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
+            
             
             
             Spacer()

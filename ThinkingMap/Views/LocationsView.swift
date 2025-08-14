@@ -36,19 +36,29 @@ extension LocationsView {
     private var header: some View {
         VStack{
             VStack(spacing: 0) {
-                Text(vm.mapLocation.name+", "+vm.mapLocation.cityName)
-                    .font(.title2)
-                    .fontWeight(.black)
-                    .foregroundStyle(.primary)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    //.background(Color.red)
-                    .overlay(alignment: .leading) {
-                        Image(systemName: "arrow.down")
-                            .foregroundStyle(.primary)
-                            .padding()
+                Button {
+                    vm.toggleLocationList()
+                } label: {
+                    Text(vm.mapLocation.name+", "+vm.mapLocation.cityName)
+                        .font(.title2)
+                        .fontWeight(.black)
+                        .foregroundStyle(.primary)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
                         
-                    }
+                        .overlay(alignment: .leading) {
+                            Image(systemName: "arrow.down")
+                                .foregroundStyle(.primary)
+                                .padding()
+                                .rotationEffect(Angle(degrees: vm.showLocationList ? 180 : 0))
+                            
+                        }
+                }
+
+                if vm.showLocationList{
+                    LocationsListView()
+                }
+                
                 
                 
             }

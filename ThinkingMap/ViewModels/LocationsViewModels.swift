@@ -12,7 +12,11 @@ import SwiftUI
 class LocationViewModel: ObservableObject {
     @Published var locations: [Location]
     
-    @Published var mapLocation: Location
+    @Published var mapLocation: Location {
+        didSet {
+            updateMapRegion(location: mapLocation)
+        }
+    }
     
     //Current region on map
     @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
@@ -40,6 +44,14 @@ class LocationViewModel: ObservableObject {
     func toggleLocationList() {
         withAnimation(.easeInOut) {
             showLocationList = !showLocationList
+        }
+    }
+    
+    func showNextLocation(location: Location) {
+        withAnimation(.easeInOut) {
+            mapLocation = location
+            showLocationList = false
+            
         }
     }
 }

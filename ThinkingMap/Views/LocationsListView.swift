@@ -11,10 +11,19 @@ struct LocationsListView: View {
     @EnvironmentObject private var vm: LocationViewModel
     var body: some View {
         List{
-            ForEach(vm.locations){ location in 
-                ListRowView(location: location)
-                    .padding(.vertical, 4)
-                    .listRowBackground(Color.clear)
+            ForEach(vm.locations){ location in
+                
+                Button {
+                    vm.showNextLocation(location: location)
+                } label: {
+                    ListRowView(location: location)
+                }
+                .padding(.vertical, 4)
+                .listRowBackground(Color.clear)
+
+                
+               
+                    
                 
                 
             }

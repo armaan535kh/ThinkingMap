@@ -13,6 +13,7 @@ struct LocationPreviewView: View {
     
     var body: some View {
         
+
         HStack(alignment: .bottom, spacing: 0) {
             VStack(alignment: .leading, spacing: 16) {
                 imageSection
@@ -30,6 +31,7 @@ struct LocationPreviewView: View {
         .background(RoundedRectangle(cornerRadius: 10).fill(.ultraThinMaterial)
             .offset(y:65))
         .cornerRadius(10)
+
         
         
         
@@ -45,12 +47,15 @@ struct LocationPreviewView: View {
         
         LocationPreviewView(location: LocationsDataService.locations.first!)
             .padding()
+
     }
 }
 
 extension LocationPreviewView {
+
     
     //for image Section
+
     private var imageSection: some View {
         
         ZStack {
@@ -67,7 +72,9 @@ extension LocationPreviewView {
         .cornerRadius(10)
     }
     
+
     //for title section
+
     private var titleSection: some View {
         
         VStack(alignment: .leading, spacing: 4) {
@@ -103,4 +110,5 @@ extension LocationPreviewView {
         }
         .buttonStyle(.bordered)
     }
+
 }

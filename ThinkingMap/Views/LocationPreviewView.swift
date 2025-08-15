@@ -13,9 +13,32 @@ struct LocationPreviewView: View {
     
     var body: some View {
         
-        VStack(spacing: 16) {
-            imageSection
-            titleSection
+        HStack {
+            VStack(spacing: 16) {
+                imageSection
+                titleSection
+            }
+            
+            VStack(spacing: 8) {
+                Button {
+                    //action
+                } label: {
+                    Text("Learn More")
+                        .font(.headline)
+                        .frame(width: 125, height: 35)
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Button {
+                    //action
+                } label: {
+                    Text("Learn More")
+                        .font(.headline)
+                        .frame(width: 125, height: 35)
+                }
+                .buttonStyle(.bordered)
+
+            }
         }
         
         
@@ -28,7 +51,7 @@ struct LocationPreviewView: View {
     
     ZStack {
         
-        Color.blue.ignoresSafeArea()
+        Color.green.ignoresSafeArea()
         
         LocationPreviewView(location: LocationsDataService.locations.first!)
     }

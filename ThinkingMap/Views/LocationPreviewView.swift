@@ -35,6 +35,8 @@ struct LocationPreviewView: View {
 }
 
 extension LocationPreviewView {
+    
+    //for image Section
     private var imageSection: some View {
         
         ZStack {
@@ -51,7 +53,7 @@ extension LocationPreviewView {
         .cornerRadius(10)
     }
     
-    
+    //for title section
     private var titleSection: some View {
         
         VStack(alignment: .leading, spacing: 4) {
